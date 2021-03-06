@@ -1,0 +1,195 @@
+public class lifetime{
+
+     public static void main(String []args){
+        System.out.println("akshar13");
+        int x ;
+        
+        for(x = 0 ; x<3 ; x++)  {
+        
+            int y = -1 ;
+        
+            System.out.println("y is :" + y );
+            y = 100;
+            
+            System.out.println("y i now " + y );
+        
+            
+        }
+    }
+}
+output
+$javac lifetime.java
+$java -Xmx128M -Xms16M lifetime
+akshar13
+y is :-1
+y i now 100
+y is :-1
+y i now 100
+y is :-1
+y i now 100
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class ScopeErr{
+
+     public static void main(String []args){
+        System.out.println("akshar14");
+        int bar = 1 ;
+        {   // creates a new scope 
+            int bar = 2 ; //compiler time error - bar already defined!!!!
+        }
+        
+     }
+}
+output
+$javac ScopeErr.java
+ScopeErr.java:7: error: variable bar is already defined in method main(String[])
+            int bar = 2 ; //compiler time error - bar already defined!!!!
+                ^
+1 error
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class conversion{
+
+     public static void main(String []args){
+        System.out.println("akshar15");
+        byte b ;
+        int i = 257 ;
+        double d = 323.142;
+        
+        System.out.println("\n Conversion of int to byte ");
+        b = (byte) i ;
+        System.out.println("i and b --" + i + " ,  " + b );
+        
+        System.out.println("\nConversion of double to int ");
+        i = (int) d;
+        System.out.println("d and i --" + d +" ,  " + i );
+        
+        System.out.println("\nConversion of double to byte");
+        b = (byte) d;
+        System.out.println("d and  b --" + d +" , " + b );
+        
+    
+        
+     }
+}
+output
+$javac conversion.java
+$java -Xmx128M -Xms16M conversion
+akshar15
+
+ Conversion of int to byte 
+i and b --257 ,  1
+
+Conversion of double to int 
+d and i --323.142 ,  323
+
+Conversion of double to byte
+d and  b --323.142 , 67
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class promote{
+
+     public static void main(String []args){
+        System.out.println("akshar16");
+        
+        byte b = 42 ;
+        char c = 'a';
+        short s = 1024;
+        int i = 50000;
+        float f = 5.67f;
+        double d = .1234;
+        double result = (f * b ) + (i / c) - (d * s );
+        System.out.println((f * b) + " + " + (i / c)+ " -" + (d * s) );
+        System.out.println("result = " + result);
+        
+     }
+}
+output
+$javac promote.java
+$java -Xmx128M -Xms16M promote
+akshar16
+238.14 + 515 -126.3616
+result = 626.7784146484375
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class Array{
+
+     public static void main(String []args){
+        System.out.println("akshar17");
+        int month_days[];
+        month_days = new int[12];
+        month_days[0] = 31;
+        month_days[1] = 28;
+        month_days[2] = 31;
+        month_days[3] = 30;
+        month_days[4] = 31;
+        month_days[5] = 30;
+        month_days[6] = 31;
+        month_days[7] = 31;
+        month_days[8] = 30;
+        month_days[9] = 31;
+        month_days[10] = 30;
+        month_days[11] = 31;
+        System.out.println("April has " + month_days[3] + " days.");
+        System.out.println("january has " + month_days[0] + " days.");
+        System.out.println("december has " + month_days[11] + " days.");
+        System.out.println("october has " + month_days[9] + " days.");
+        System.out.println("november has " + month_days[10] + " days.");
+        System.out.println("june has " + month_days[5] + " days.");
+        System.out.println("feb has " + month_days[1] + " days.");
+     }
+}
+output
+$javac Array.java
+$java -Xmx128M -Xms16M Array
+akshar17
+April has 30 days.
+january has 31 days.
+december has 31 days.
+october has 31 days.
+november has 30 days.
+june has 30 days.
+feb has 28 days.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+other method to declare the value in array-------
+public class AutoArray{
+
+     public static void main(String []args){
+        System.out.println("akshar18");
+        int month_days[] =  {31, 28 , 31 , 30 , 31 , 30 , 31 , 31 , 30 , 31 , 30 , 31 };
+        System.out.println("April has " + month_days[3] + " days.");
+        System.out.println("january has " + month_days[0] + " days.");
+        System.out.println("december has " + month_days[11] + " days.");
+        System.out.println("october has " + month_days[9] + " days.");
+        System.out.println("november has " + month_days[10] + " days.");
+        System.out.println("june has " + month_days[5] + " days.");
+        System.out.println("feb has " + month_days[1] + " days.");
+     }
+}
+output
+$javac AutoArray.java
+$java -Xmx128M -Xms16M AutoArray
+akshar18
+April has 30 days.
+january has 31 days.
+december has 31 days.
+october has 31 days.
+november has 30 days.
+june has 30 days.
+feb has 28 days.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class average {
+
+     public static void main(String []args){
+        System.out.println("akshar19");
+        double nums[] = { 10.1 , 11.2 , 12.3, 13.4 , 14.5 } ;
+        double result = 0 ;
+        int i ;
+        for(i = 0 ; i<5 ; i++)
+         result = result + nums[i] ;
+         System.out.println("averge is " + result / 5);
+         
+     }
+}
+output
+$javac average.java
+$java -Xmx128M -Xms16M average
+akshar19
+averge is 12.299999999999999
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
